@@ -1,0 +1,13 @@
+<div class="score-card">
+    <div class="image-div">
+        <img src="../../assets/avtar.jpeg" width="100" height="130" alt="">
+    </div>
+    <div class="title-div">
+        <h3>{{gameData.title}}</h3>
+        <em>{{gameData.platform}}</em>
+        <img *ngIf="gameData['editors_choice'] == 'Y'" style="float: right;" src="../../assets/editor-choice.png">
+    </div>
+    <div class="score-div">
+        <p>Genre: {{gameData.genre}}  <span> {{gameData.score}}</span></p>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="score-board-panel">
+    <ng-container *ngFor="let gameData of gamesArenaScores">
+        <app-score-card [gameData] = "gameData" class="score-card-layout">
+        </app-score-card>
+    </ng-container>
+    <div *ngIf="gamesArenaScores && gamesArenaScores.length == 0" class="no-data"> 
+        <p>No Games Found</p>
+    </div>
+</div>

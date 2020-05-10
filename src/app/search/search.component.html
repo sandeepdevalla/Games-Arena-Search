@@ -1,0 +1,4 @@
+<input type="search" list="gamesList" class="game-search" (input) = "getRefreshList($event)" (change) = "searchGames($event)" placeholder="Search by (Title)">
+<datalist id="gamesList">
+    <option value="{{game.title}}" *ngFor="let game of games"></option>
+</datalist>
