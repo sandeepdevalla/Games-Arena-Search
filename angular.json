@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "myapp:build"
+            "browserTarget": "gamesarena:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "myapp:build:production"
+              "browserTarget": "gamesarena:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myapp:build"
+            "browserTarget": "gamesarena:build"
           }
         },
         "test": {
@@ -114,11 +114,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "myapp:serve"
+            "devServerTarget": "gamesarena:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "myapp:serve:production"
+              "devServerTarget": "gamesarena:serve:production"
             }
           }
         }
