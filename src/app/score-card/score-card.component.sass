@@ -1,4 +1,9 @@
 .score-card
+    &:hover
+        animation: hilight 0.5s
+        animation-fill-mode: forwards
+
+.score-card
     border-radius: 10px
     height: 200px
     border: 2px solid green
@@ -19,3 +24,13 @@
             span
                 float: right
                 color: orange
+@keyframes hilight 
+    from
+        backgroud-color: black
+    to
+        transform: translate(0, -5%)
+        box-shadow: 5px 5px gray
+
+
+
+    
