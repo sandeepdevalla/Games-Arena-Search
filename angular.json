@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myapp": {
+    "gamesarena": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/myapp",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -125,7 +125,7 @@
       }
     }
   },
-  "defaultProject": "myapp",
+  "defaultProject": "gamesarena",
   "cli": {
     "analytics": "4bf76e4b-514a-4ecf-aacb-47eaa9b5f728"
   }
