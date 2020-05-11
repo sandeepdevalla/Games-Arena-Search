@@ -2,7 +2,13 @@
     &:hover
         animation: hilight 0.5s
         animation-fill-mode: forwards
-
+@media (min-width: 375px) and (max-width: 1023px)
+    .score-card
+        .image-div
+            width: 20% !important
+            .image-frame
+                width: 80px !important
+                height: 100px !important
 .score-card
     border-radius: 10px
     height: 200px
@@ -13,6 +19,9 @@
     .image-div
         width: 25%
         margin: 10px
+        .image-frame
+            width: 100px
+            height: 120px
 
     .title-div
         width: 70%

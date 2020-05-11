@@ -1,6 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import games from '../assets/games.json';
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +14,29 @@ export default class AppService implements OnDestroy {
 
   }
   getDataFromStarlord() {
-    const url = 'http://starlord.hackerearth.com/gamesarena';
+    const url = 'https://starlord.hackerearth.com/gamesarena';
     return this.http.get(url);
+  }
+  storeUsingTransaction(db, data) {
+    var scoresObjectStore = db.transaction("scores", "readwrite").objectStore("scores");
+    data.forEach(gameData => {
+      scoresObjectStore.add(gameData);
+    });
+    var res = scoresObjectStore.getAll();
+    res.onsuccess = data => {
+      this.gamesDataSubscriber$.next(data.target.result);
+    }
   }
   storeGameDataInDb(db) {
     this.getDataFromStarlord().subscribe((data: any[]) => { 
-        var scoresObjectStore = db.transaction("scores", "readwrite").objectStore("scores");
-        data.splice(1).forEach(gameData => {
-          scoresObjectStore.add(gameData);
-        });
-        var res = scoresObjectStore.getAll();
-        res.onsuccess = data => {
-          console.log('inside data getAll', data);
-          this.gamesDataSubscriber$.next(data.target.result);
-        }
-      })
+        this.storeUsingTransaction(db, data.splice(1));
+      },
+      error => {
+        console.log('inside error', error)
+        this.storeUsingTransaction(db, games);
+        
+      }
+      )
   }
   connectIndexedDb() {
     this.dbInstance = window.indexedDB.open("GamesScoreData");

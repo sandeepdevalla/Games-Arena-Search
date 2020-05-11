@@ -8,13 +8,49 @@
 .score-card-layout
     width:47%
     margin:20px
-
+@media (min-width: 375px) and (max-width: 1023px)
+    .score-card-layout
+        width: 100% !important
 .no-data
-    height: 200px
+    height: 150px
     color: white
-    display: flex
     width: 100%
-    align-items: center
     text-align: center
     p
-        width: 100%
+        margin: 50px
+        font-size: 25px
+.bounce-ball
+    animation: bounce 1.8s infinite
+    width: 20px
+    height: 20px
+    background: white
+    border-radius: 20px
+    margin: 30px
+
+@keyframes bounce 
+    0%
+        background: white
+        margin-left: 0%
+    25%
+        background: orange
+        margin-top: 10px
+        margin-left: 20%
+    50%
+        margin-top: 10px
+        background: red
+        margin-left: 40%
+
+    75%
+        margin-top: 10px
+        background: blue
+        margin-left: 60%
+
+    100%
+        margin-top: 10px
+        background: white
+        margin-left: 80%
+
+
+.loading-layout
+    height: 200px
+
