@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href='https://sandeepdevalla.github.io/Games-Arena-Search/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.4",
+    "@angular/cdk": "^9.2.3",
     "@angular/common": "~9.1.4",
     "@angular/compiler": "~9.1.4",
     "@angular/core": "~9.1.4",

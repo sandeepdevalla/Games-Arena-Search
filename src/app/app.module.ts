@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
 import { ScoreCardComponent } from './score-card/score-card.component';
@@ -15,12 +17,13 @@ import { ScoreCardComponent } from './score-card/score-card.component';
     DashboardComponent,
     SearchComponent,
     ScoreBoardComponent,
-    ScoreCardComponent
+    ScoreCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule 
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
