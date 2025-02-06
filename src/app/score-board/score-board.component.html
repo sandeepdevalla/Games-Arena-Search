@@ -1,8 +1,11 @@
 <div class="score-board-panel">
-    <ng-container *ngFor="let gameData of gamesArenaScores">
-        <app-score-card [gameData] = "gameData" class="score-card-layout">
-        </app-score-card>
-    </ng-container>
+    <!-- cdkScrollable -->
+    <cdk-virtual-scroll-viewport itemSize = "200" minBufferPx = "50" maxBufferPx = "50" [style.width.%]="100">
+        <ng-container *cdkVirtualFor="let gameData of gamesArenaScores">
+            <app-score-card [gameData] = "gameData" class="score-card-layout">
+            </app-score-card>
+        </ng-container>
+    </cdk-virtual-scroll-viewport>
     <div *ngIf="gamesArenaScores && gamesArenaScores.length == 0" class="no-data"> 
         <p>Games are loading please wait or you can refresh the list</p>
         <div class="loading-layout">
